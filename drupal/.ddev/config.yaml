@@ -297,8 +297,11 @@ corepack_enable: false
 #   - exec: drush cache:rebuild
 
 # DrupalServices
+# ddev launch $(ddev drush uli) // Command
 # ddev poweroff
 # ddev start
+# ddev stop
+# ddev restart // db export and import using this command
 # chmod +x .devcontainer/setup_project.sh
 
 # ddev drush sql-dump --gzip --result-file=../db/site.sql
