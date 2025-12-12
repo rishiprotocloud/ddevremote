@@ -7,14 +7,14 @@ core_version_requirement: ^10
 libraries:
   - villaagency/global
 regions:
+  subheader: 'Sub Header'
   header: 'Header'
-  primary_menu: 'Primary menu'
-  secondary_menu: 'Secondary menu'
-  page_top: 'Page top'
-  page_bottom: 'Page bottom'
-  featured: 'Featured'
-  breadcrumb: 'Breadcrumb'
-  content: 'Content'
-  sidebar_first: 'Sidebar first'
-  sidebar_second: 'Sidebar second'
+  main_banner : 'Main Banner'
+  featured_section : 'Featured Section'
+  video_section : 'Video Section'
+  video_content : 'Video Content'
+  fun_facts : 'Fun Facts'
+  best_deal : 'Best Deal'
+  properties_section : 'Properties Section'
+  content : 'Content'
   footer: 'Footer'
