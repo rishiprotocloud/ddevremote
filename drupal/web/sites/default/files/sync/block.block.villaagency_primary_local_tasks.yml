@@ -1,0 +1,22 @@
+uuid: c3681d57-bc7e-4721-8bec-43a94e8076bb
+langcode: en
+status: true
+dependencies:
+  theme:
+    - villaagency
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: villaagency_primary_local_tasks
+theme: villaagency
+region: header
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

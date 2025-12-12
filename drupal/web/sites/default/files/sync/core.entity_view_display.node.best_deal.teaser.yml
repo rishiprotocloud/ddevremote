@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.best_deal.body
+    - field.field.node.best_deal.field_deal_image
     - field.field.node.best_deal.field_floor_number
     - field.field.node.best_deal.field_number_of_rooms
     - field.field.node.best_deal.field_parking_available
@@ -34,6 +35,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_deal_image: true
   field_floor_number: true
   field_number_of_rooms: true
   field_parking_available: true

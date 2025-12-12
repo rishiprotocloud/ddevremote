@@ -1,0 +1,22 @@
+uuid: dc2e436e-b8d8-4c37-bb7b-6c2bfe770612
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - villaagency
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: villaagency_content
+theme: villaagency
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

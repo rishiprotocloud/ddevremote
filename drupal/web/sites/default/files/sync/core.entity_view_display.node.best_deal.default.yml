@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.best_deal.body
+    - field.field.node.best_deal.field_deal_image
     - field.field.node.best_deal.field_floor_number
     - field.field.node.best_deal.field_number_of_rooms
     - field.field.node.best_deal.field_parking_available
@@ -12,6 +13,7 @@ dependencies:
     - field.field.node.best_deal.field_type
     - node.type.best_deal
   module:
+    - image
     - text
     - user
 id: node.best_deal.default
@@ -25,6 +27,17 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_deal_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 108
     region: content
   field_floor_number:
     type: string

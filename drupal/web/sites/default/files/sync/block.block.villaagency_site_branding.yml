@@ -1,0 +1,25 @@
+uuid: ecd4de91-4950-4791-9dff-b7d681b80f31
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - villaagency
+_core:
+  default_config_hash: n_nlgjggHVfQt2H__zvLOKB2YtjPDbQ5tHijF9LE1aM
+id: villaagency_site_branding
+theme: villaagency
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }
