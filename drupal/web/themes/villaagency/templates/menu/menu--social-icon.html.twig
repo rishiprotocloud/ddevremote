@@ -28,26 +28,30 @@
 #}
 {{ menus.menu_links(items, attributes, 0) }}
 
+
+
 {% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul class="social-links 123">
+      <ul class="social-links xyz">
     {% else %}
       <ul>
     {% endif %}
+
     {% for item in items %}
-     {%
-      set classes = [
+      {% set classes = [
         'fab',
-        'fa-' ~ item.title,
+        'fa-' ~ item.title|lower
+      ] %}
 
-      ]
+      <li{{ item.attributes }}>
+        {% set icon_attr = create_attribute() %}
+        <a href="{{ item.url }}">
+          <i {{ icon_attr.addClass(classes) }}></i>
+          {{ item.title }}
+        </a>
 
-      %}
-       <li{{ item.attributes }}>
-        {# {{ link(item.title, item.url) }} #}
-        <a href="{{ item.url }}"><i {{attributes.addClass(classes)}}></i>{{ item.title }}</a>
         {% if item.below %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
         {% endif %}
@@ -56,9 +60,4 @@
     </ul>
   {% endif %}
 {% endmacro %}
-<ul class="social-links">
-            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-            <li><a href="https://x.com/minthu" target="_blank"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-          </ul>
+
