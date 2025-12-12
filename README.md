@@ -1,5 +1,4 @@
 # ddevremote
-
 # DrupalServices
 chmod +x .devcontainer/setup_project.sh
 
