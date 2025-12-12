@@ -1,0 +1,19 @@
+uuid: dd21123c-4e2b-470c-b077-d51b10559705
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_payment_process
+    - node.type.best_deal
+id: node.best_deal.field_payment_process
+field_name: field_payment_process
+entity_type: node
+bundle: best_deal
+label: 'Payment Process'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

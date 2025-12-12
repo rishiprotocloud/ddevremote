@@ -1,0 +1,21 @@
+uuid: 9d00b184-dc90-4f93-abb1-0a55d372b8c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_parking_available
+    - node.type.best_deal
+id: node.best_deal.field_parking_available
+field_name: field_parking_available
+entity_type: node
+bundle: best_deal
+label: 'Parking Available'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

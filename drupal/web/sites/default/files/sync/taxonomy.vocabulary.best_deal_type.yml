@@ -1,0 +1,9 @@
+uuid: dcda444c-1f4b-44f4-bd68-62a59e209e9a
+langcode: en
+status: true
+dependencies: {  }
+name: 'Best Deal Type'
+vid: best_deal_type
+description: null
+weight: 0
+new_revision: false

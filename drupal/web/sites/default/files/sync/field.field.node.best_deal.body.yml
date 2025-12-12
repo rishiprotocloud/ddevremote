@@ -1,0 +1,24 @@
+uuid: ce004435-3d7e-4e96-8e2e-5ecc2ca20f78
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.best_deal
+  module:
+    - text
+id: node.best_deal.body
+field_name: body
+entity_type: node
+bundle: best_deal
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary
