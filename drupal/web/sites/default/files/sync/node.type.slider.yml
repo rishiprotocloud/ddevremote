@@ -1,0 +1,17 @@
+uuid: d8827640-9f3c-411c-a80b-ca52c3b6db59
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Slider
+type: slider
+description: null
+help: null
+new_revision: true
+preview_mode: 0
+display_submitted: true
