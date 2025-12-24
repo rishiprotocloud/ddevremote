@@ -1,21 +1,21 @@
-uuid: 42dc40b8-ba08-44e3-ae28-ca4e0d241843
+uuid: 5d8aa7bf-1897-4957-809b-091c5c009a0b
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.main_banner
+    - views.view.banner_slider_view
   module:
     - views
   theme:
     - villaagency
-id: villaagency_views_block__main_banner_block_1
+id: villaagency_views_block__banner_slider_view_block_1
 theme: villaagency
 region: main_banner
 weight: 0
 provider: null
-plugin: 'views_block:main_banner-block_1'
+plugin: 'views_block:banner_slider_view-block_1'
 settings:
-  id: 'views_block:main_banner-block_1'
+  id: 'views_block:banner_slider_view-block_1'
   label: ''
   label_display: '0'
   provider: views
