@@ -1,0 +1,5 @@
+name: Contact Info Block
+type: module
+description: Provides a configurable contact info block with icons.
+core_version_requirement: ^10
+package: Custom
