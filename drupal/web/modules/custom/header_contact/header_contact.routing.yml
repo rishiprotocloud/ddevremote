@@ -1,0 +1,7 @@
+header_contact.settings:
+  path: '/admin/config/header-contact'
+  defaults:
+    _form: '\Drupal\header_contact\Form\ContactSettingsForm'
+    _title: 'Header Contact Settings'
+  requirements:
+    _permission: 'administer site configuration'

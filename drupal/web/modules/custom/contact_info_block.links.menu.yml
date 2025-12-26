@@ -1,0 +1,6 @@
+contact_info_block.settings:
+  title: 'Contact Info Settings'
+  description: 'Manage contact info block settings'
+  parent: system.admin_config
+  route_name: contact_info_block.settings
+  weight: 100

@@ -1,0 +1,5 @@
+name: Header Contact Info
+type: module
+description: Provides a configurable block for header contact information with icons.
+core_version_requirement: ^10
+package: Custom
