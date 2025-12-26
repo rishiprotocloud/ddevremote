@@ -1,0 +1,20 @@
+uuid: 73e47370-f95a-47c6-b6ff-5518f02f01f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - header_contact
+  theme:
+    - villaagency
+id: villaagency_headercontactinfo
+theme: villaagency
+region: subheader
+weight: 0
+provider: null
+plugin: header_contact_block
+settings:
+  id: header_contact_block
+  label: 'Header Contact Info'
+  label_display: '0'
+  provider: header_contact
+visibility: {  }

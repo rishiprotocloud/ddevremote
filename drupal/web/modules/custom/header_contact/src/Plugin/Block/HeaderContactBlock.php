@@ -26,17 +26,16 @@ class HeaderContactBlock extends BlockBase {
       if (count($parts) >= 3) {
         $items[] = [
           'icon' => $parts[0] ?? '',
-          'label' => $parts[1] ?? '',
+          'label' => $parts[1] ?? '',  // optional, अगर use करना हो
           'value' => $parts[2] ?? '',
-          'link' => $parts[3] ?? '',
+          'link' => $parts[3] ?? $parts[2],  // अगर link न हो तो value को plain text
         ];
       }
     }
 
     return [
-      '#theme' => 'header_contact_block',
+      '#theme' => 'header_contact_block',  // exactly यही नाम
       '#items' => $items,
-      '#cache' => ['max-age' => 0], // अगर config change पर update चाहिए
     ];
   }
 }

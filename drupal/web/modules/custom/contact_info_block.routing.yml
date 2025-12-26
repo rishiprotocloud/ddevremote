@@ -1,7 +1,0 @@
-contact_info_block.settings:
-  path: '/admin/config/contact-info'
-  defaults:
-    _form: '\Drupal\contact_info_block\Form\ContactInfoSettingsForm'
-    _title: 'Contact Info Settings'
-  requirements:
-    _permission: 'administer site configuration'

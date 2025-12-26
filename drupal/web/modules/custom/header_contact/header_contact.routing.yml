@@ -5,3 +5,5 @@ header_contact.settings:
     _title: 'Header Contact Settings'
   requirements:
     _permission: 'administer site configuration'
+  options:
+    _admin_route: TRUE

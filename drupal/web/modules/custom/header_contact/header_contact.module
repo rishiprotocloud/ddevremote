@@ -1,0 +1,40 @@
+<?php
+/**
+ * @file
+ * Hook implementations for Header Contact module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function header_contact_theme($existing, $type, $theme, $path) {
+  return [
+    'header_contact_block' => [
+      'template' => 'header-contact-block',  // file name without extension
+      'base hook' => 'block',  // ये line add करो – बहुत important!
+      'variables' => ['items' => []],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_menu_local_tasks_alter().
+ * नहीं, better: hook_help या direct menu link.
+ * सबसे simple: routing में ही category add करें (ऊपर वाला file ठीक है)
+ */
+ 
+// नया: System category में link add करने के लिए
+use Drupal\Core\Url;
+
+function header_contact_menu() {
+  $items = [];
+
+  $items['header_contact.settings'] = [
+    'title' => 'Header Contact Settings',
+    'route_name' => 'header_contact.settings',
+    'base_route' => 'system.admin_config_system',
+    'weight' => 100,
+  ];
+
+  return $items;
+}
