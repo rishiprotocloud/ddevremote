@@ -1,0 +1,24 @@
+uuid: 135f6545-fb98-4b2b-9fcd-6935f59ff9ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.featured_best_deal
+  module:
+    - views
+  theme:
+    - villaagency
+id: villaagency_views_block__featured_best_deal_block_1
+theme: villaagency
+region: featured_section
+weight: 0
+provider: null
+plugin: 'views_block:featured_best_deal-block_1'
+settings:
+  id: 'views_block:featured_best_deal-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

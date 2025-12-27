@@ -1,0 +1,28 @@
+uuid: 03bbf8a8-0445-43e3-9607-0907d3885613
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - filter.format.basic_html
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.best_deal_faqs
+  module:
+    - text
+id: paragraph.best_deal_faqs.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: best_deal_faqs
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats:
+    - basic_html
+    - full_html
+field_type: text_with_summary

@@ -59,16 +59,24 @@
   </div> #}
   <!-- ***** Preloader End ***** -->
 
-  <div class="sub-header">
-    <div class="container">
-    
-      <div class="row">
-        {{page.subheader}}
+<div class="sub-header">
+  <div class="container">
+    <div class="row">
+      {% if page.header_contact_info %}
+          {{ page.header_contact_info }}
         
-        
-      </div>
+      {% endif %}
+
+      {% if page.social_icon %}
+       
+          {{ page.social_icon }}
+      
+      {% endif %}
     </div>
   </div>
+</div>
+
+  
 
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
@@ -99,7 +107,7 @@
     </div>
   </header>
     {{ page.main_banner }}
-  
+    {{ page.featured_section }}
   <!-- ***** Header Area End ***** -->
   {# <header role="banner">
     {{ page.header }}

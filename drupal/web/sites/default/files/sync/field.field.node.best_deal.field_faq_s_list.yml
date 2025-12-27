@@ -1,0 +1,31 @@
+uuid: 49498e49-8d46-4399-b7b8-d636911efd87
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_faq_s_list
+    - node.type.best_deal
+    - paragraphs.paragraphs_type.best_deal_faqs
+  module:
+    - entity_reference_revisions
+id: node.best_deal.field_faq_s_list
+field_name: field_faq_s_list
+entity_type: node
+bundle: best_deal
+label: "Faq's List"
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      best_deal_faqs: best_deal_faqs
+    negate: 0
+    target_bundles_drag_drop:
+      best_deal_faqs:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions

@@ -1,0 +1,78 @@
+<div class="featured-deal-wrapper">
+  {% for row in rows %}
+    <pre>
+    {{ dump(row) }}
+    </pre>
+     <div class="featured section">
+        <div class="container">
+            <div class="row">
+            
+            <!-- Left Image -->
+            <div class="col-lg-4">
+                <div class="left-image">
+                {% if row.content['#row']._entity.field_deal_image.entity.uri.value is defined %}
+                    <img src="{{ file_url(row.content['#row']._entity.field_deal_image.entity.uri.value) }}" alt="{{ row.content['#row']._entity.field_deal_image.alt }}">
+                {% endif %}
+                <a href="{{ path('entity.node.canonical', {'node': row.content['#row']._entity.nid.value}) }}">
+                    <img src="/themes/custom/YOUR_THEME/assets/images/featured-icon.png" alt="" style="max-width: 60px; padding: 0px;">
+                </a>
+                </div>
+            </div>
+
+            <!-- Title + FAQs Accordion -->
+            <div class="col-lg-5">
+                <div class="section-heading">
+                <h6>| Featured</h6>
+                <h2>{{ row.content['#row']._entity.title.value|raw }}</h2>
+                </div>
+
+                <div class="accordion" id="accordionExample">
+                {% for faq in row.content['#row']._entity.field_faq_s_list %}
+                    <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading{{ loop.index }}">
+                        <button class="accordion-button {% if not loop.first %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ loop.index }}" aria-expanded="{{ loop.first ? 'true' : 'false' }}" aria-controls="collapse{{ loop.index }}">
+                        {{ faq.entity.field_title.value }}
+                        </button>
+                    </h2>
+                    <div id="collapse{{ loop.index }}" class="accordion-collapse collapse {% if loop.first %}show{% endif %}" aria-labelledby="heading{{ loop.index }}" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                        {{ faq.entity.field_description.value|raw }}
+                        </div>
+                    </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+
+            <!-- Info Table -->
+            <div class="col-lg-3">
+                <div class="info-table">
+                <ul>
+                    <li>
+                    <img src="/themes/custom/YOUR_THEME/assets/images/info-icon-01.png" alt="" style="max-width: 52px;">
+                    <h4>{{ row.content['#row']._entity.field_total_flat_space.value }}<br><span>Total Flat Space</span></h4>
+                    </li>
+                    <li>
+                    <img src="/themes/custom/YOUR_THEME/assets/images/info-icon-02.png" alt="" style="max-width: 52px;">
+                    <h4>Contract<br><span>Contract Ready</span></h4>
+                    </li>
+                    <li>
+                    <img src="/themes/custom/YOUR_THEME/assets/images/info-icon-03.png" alt="" style="max-width: 52px;">
+                    <h4>{{ row.content['#row']._entity.field_payment_process.value }}<br><span>Payment Process</span></h4>
+                    </li>
+                    <li>
+                    <img src="/themes/custom/YOUR_THEME/assets/images/info-icon-04.png" alt="" style="max-width: 52px;">
+                    <h4>Safety<br><span>24/7 Under Control</span></h4>
+                    </li>
+                </ul>
+                </div>
+            </div>
+
+            </div>
+        </div>
+        </div>
+
+  {% endfor %}
+</div>
+
+  

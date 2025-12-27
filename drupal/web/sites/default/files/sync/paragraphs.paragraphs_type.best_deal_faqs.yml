@@ -1,0 +1,10 @@
+uuid: f0e6c1dc-fbd1-453d-9869-4edc31619ab2
+langcode: en
+status: true
+dependencies: {  }
+id: best_deal_faqs
+label: 'Best Deal FAQs'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

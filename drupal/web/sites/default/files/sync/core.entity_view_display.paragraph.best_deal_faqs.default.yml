@@ -1,0 +1,31 @@
+uuid: 67723981-ac88-4c07-b7e0-ff299fab719f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.best_deal_faqs.field_description
+    - field.field.paragraph.best_deal_faqs.field_title
+    - paragraphs.paragraphs_type.best_deal_faqs
+  module:
+    - text
+id: paragraph.best_deal_faqs.default
+targetEntityType: paragraph
+bundle: best_deal_faqs
+mode: default
+content:
+  field_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

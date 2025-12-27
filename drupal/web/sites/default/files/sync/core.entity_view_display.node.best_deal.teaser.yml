@@ -6,7 +6,9 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.best_deal.body
     - field.field.node.best_deal.field_deal_image
+    - field.field.node.best_deal.field_faq_s_list
     - field.field.node.best_deal.field_floor_number
+    - field.field.node.best_deal.field_is_featured
     - field.field.node.best_deal.field_number_of_rooms
     - field.field.node.best_deal.field_parking_available
     - field.field.node.best_deal.field_payment_process
@@ -36,7 +38,9 @@ content:
     region: content
 hidden:
   field_deal_image: true
+  field_faq_s_list: true
   field_floor_number: true
+  field_is_featured: true
   field_number_of_rooms: true
   field_parking_available: true
   field_payment_process: true

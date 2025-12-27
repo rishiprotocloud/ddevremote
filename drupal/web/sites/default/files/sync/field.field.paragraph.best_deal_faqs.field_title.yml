@@ -1,0 +1,19 @@
+uuid: d2cccf52-0399-4512-98a7-ae095582bdbf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.best_deal_faqs
+id: paragraph.best_deal_faqs.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: best_deal_faqs
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
