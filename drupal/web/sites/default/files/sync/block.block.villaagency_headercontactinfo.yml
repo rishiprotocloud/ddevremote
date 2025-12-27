@@ -1,4 +1,4 @@
-uuid: 73e47370-f95a-47c6-b6ff-5518f02f01f6
+uuid: a3c384f0-341d-4976-942f-9a4bf5b95fe5
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
 id: villaagency_headercontactinfo
 theme: villaagency
 region: top_header_left
-weight: -12
+weight: 0
 provider: null
 plugin: header_contact_block
 settings:

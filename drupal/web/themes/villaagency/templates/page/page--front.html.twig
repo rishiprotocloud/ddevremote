@@ -46,11 +46,22 @@
  */
 #}
 <div class="layout-container ">
- 
-   {% include "@villaagency/partials/header.html.twig" %}
+ {% include "@villaagency/partials/header.html.twig" %}
+    {{ page.main_banner }}
+    {{ page.featured_section }}
+  <!-- ***** Header Area End ***** -->
+  {# <header role="banner">
+    {{ page.header }}
+  </header> #}
 
+  {# {{ page.primary_menu }}
+  {{ page.secondary_menu }}
 
-   
+  {{ page.breadcrumb }}
+
+  {{ page.highlighted }}
+
+  {{ page.help }} #}
 
   <main role="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
@@ -73,7 +84,6 @@
 
   </main>
 
-
-      {% include "@villaagency/partials/footer.html.twig" %}
-
+ 
+    {% include "@villaagency/partials/footer.html.twig" %}
 </div>{# /.layout-container #}
