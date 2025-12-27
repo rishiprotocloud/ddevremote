@@ -8,8 +8,8 @@ dependencies:
     - villaagency
 id: villaagency_headercontactinfo
 theme: villaagency
-region: subheader
-weight: 0
+region: top_header_left
+weight: -12
 provider: null
 plugin: header_contact_block
 settings:

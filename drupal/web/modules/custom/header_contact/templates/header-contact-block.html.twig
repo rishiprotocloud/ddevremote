@@ -1,17 +1,5 @@
-{#
-<div style="background: lime; color: white; padding: 20px; font-size: 18px; border: 4px solid green; margin: 10px 0;">
-  SUCCESS: Module custom template is finally working!
-  <br>
-  Total items: {{ items|length }}
-  <br><br>
-  {% for item in items %}
-    Icon: {{ item.icon }}<br>
-    Value: {{ item.value }}<br>
-    Link: {{ item.link }}<br><br>
-  {% endfor %}
-</div>
-#}
-<div class="col-lg-8 col-md-8">
+
+
     <ul class="info">
     {% for item in items %}
       <li><i class="{{ item.icon }}"></i> {{ item.value }}</li>
@@ -20,4 +8,3 @@
       {% endfor %}
       
     </ul>
-  </div>

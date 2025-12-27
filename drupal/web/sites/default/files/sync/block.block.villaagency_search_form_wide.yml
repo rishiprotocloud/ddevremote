@@ -11,7 +11,7 @@ _core:
 id: villaagency_search_form_wide
 theme: villaagency
 region: subheader
-weight: -5
+weight: -12
 provider: null
 plugin: search_form_block
 settings:

@@ -24,13 +24,7 @@ function villaagency_preprocess_html(array &$variables): void {
  * Implements hook_preprocess_page().
  */
 function villaagency_preprocess_page(&$variables) {
-  if (isset($variables['page']['subheader']['villaagency_headercontactinfo'])) {
-    $variables['page']['header_contact_info'] = $variables['page']['subheader']['villaagency_headercontactinfo'];
-  }
-
-  if (isset($variables['page']['subheader']['villaagency_socialicon'])) {
-    $variables['page']['social_icon'] = $variables['page']['subheader']['villaagency_socialicon'];
-  }
+  
 }
 
 /**

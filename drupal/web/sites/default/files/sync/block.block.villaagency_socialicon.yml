@@ -10,8 +10,8 @@ dependencies:
     - villaagency
 id: villaagency_socialicon
 theme: villaagency
-region: subheader
-weight: 0
+region: top_header_right
+weight: -12
 provider: null
 plugin: 'system_menu_block:social-icon'
 settings:

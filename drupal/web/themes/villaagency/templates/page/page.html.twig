@@ -62,16 +62,13 @@
 <div class="sub-header">
   <div class="container">
     <div class="row">
-      {% if page.header_contact_info %}
-          {{ page.header_contact_info }}
-        
-      {% endif %}
-
-      {% if page.social_icon %}
-       
-          {{ page.social_icon }}
+          <div class="col-lg-8 col-md-8">
+          {# {{ page.top_header_left }} #}
+          </div>
+          <div class="col-lg-4 col-md-4 222">
+          {{ page.top_header_right }}
       
-      {% endif %}
+          </div>
     </div>
   </div>
 </div>

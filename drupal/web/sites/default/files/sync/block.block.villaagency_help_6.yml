@@ -1,0 +1,20 @@
+uuid: fc5cb118-bb27-469f-ade8-70ce1ccfc7a5
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - villaagency
+id: villaagency_help_6
+theme: villaagency
+region: properties_section
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: visible
+  provider: help
+visibility: {  }
