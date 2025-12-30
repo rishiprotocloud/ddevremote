@@ -1,0 +1,28 @@
+uuid: b007d33b-7d76-469a-ab70-43ea67f526c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.aboutus.body
+    - node.type.aboutus
+  module:
+    - text
+    - user
+id: node.aboutus.default
+targetEntityType: node
+bundle: aboutus
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }
