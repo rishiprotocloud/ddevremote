@@ -1,0 +1,21 @@
+uuid: 71ada44c-720a-40d3-90cf-b662300081e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.select_best_deal_property.field_select_property
+    - paragraphs.paragraphs_type.select_best_deal_property
+id: paragraph.select_best_deal_property.default
+targetEntityType: paragraph
+bundle: select_best_deal_property
+mode: default
+content:
+  field_select_property:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

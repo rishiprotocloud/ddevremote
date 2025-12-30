@@ -63,7 +63,7 @@
  */
 #}
 <article{{ attributes }}>
-454545
+
   {{ title_prefix }}
   {% if label and not page %}
     <h2{{ title_attributes }}>
@@ -85,5 +85,80 @@
   <div{{ content_attributes }}>
     {{ content }}
   </div>
+
+  
+  {# Loop through Property Paragraphs #}
+    {% for paragraph in node.field_property_paragraph %}
+      {% set best_deal_node = paragraph.entity.field_select_property.entity %}
+
+      {% if best_deal_node %}
+        <div class="best-deal-block">
+          <h2>{{ best_deal_node.label }}</h2>
+
+          {# Body field (long text with summary) #}
+          {% if best_deal_node.body.value %}
+            <div class="description">
+              {{ best_deal_node.body.value }}
+            </div>
+          {% endif %}
+
+          {# Deal Image #}
+          {% if best_deal_node.field_deal_image.entity %}
+            <div class="deal-image">
+              <img src="{{ file_url(best_deal_node.field_deal_image.entity.fileuri) }}" alt="Deal Image">
+            </div>
+          {% endif %}
+
+          {# Floor Number #}
+          {% if best_deal_node.field_floor_number.value %}
+            <p><strong>Floor:</strong> {{ best_deal_node.field_floor_number.value }}</p>
+          {% endif %}
+
+          {# Number of Rooms #}
+          {% if best_deal_node.field_number_of_rooms.value %}
+            <p><strong>Rooms:</strong> {{ best_deal_node.field_number_of_rooms.value }}</p>
+          {% endif %}
+
+          {# Is Featured #}
+          {% if best_deal_node.field_is_featured.value is not null %}
+            <p><strong>Featured:</strong> {{ best_deal_node.field_is_featured.value ? 'Yes' : 'No' }}</p>
+          {% endif %}
+
+          {# Taxonomy Terms from field_type #}
+          {% if best_deal_node.field_type %}
+            <div class="deal-type">
+              <strong>Type:</strong>
+              <ul>
+                {% for term in best_deal_node.field_type %}
+                  <li>
+                    {{ term.entity.label }}
+                    {# Optional: link to taxonomy term page #}
+                    {# <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': term.entity.id}) }}">
+                        {{ term.entity.label }}
+                      </a> #}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+
+          {# FAQs List (Paragraph reference) #}
+          {% if best_deal_node.field_faq_s_list %}
+            <div class="faq-list">
+              <h3>FAQs</h3>
+              {% for faq in best_deal_node.field_faq_s_list %}
+                {% set faq_entity = faq.entity %}
+                <div class="faq-item">
+                  <h4>{{ faq_entity.field_question.value }}</h4>
+                  <p>{{ faq_entity.field_answer.value }}</p>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+
+
 
 </article>

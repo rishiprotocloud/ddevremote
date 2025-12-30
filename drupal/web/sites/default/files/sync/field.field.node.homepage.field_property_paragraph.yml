@@ -1,0 +1,34 @@
+uuid: 09b865ee-382b-4fe8-ab4b-92fb30efe3e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_property_paragraph
+    - node.type.homepage
+    - paragraphs.paragraphs_type.select_best_deal_property
+  module:
+    - entity_reference_revisions
+id: node.homepage.field_property_paragraph
+field_name: field_property_paragraph
+entity_type: node
+bundle: homepage
+label: 'Property Paragraph'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      select_best_deal_property: select_best_deal_property
+    negate: 0
+    target_bundles_drag_drop:
+      best_deal_faqs:
+        weight: 3
+        enabled: false
+      select_best_deal_property:
+        weight: 4
+        enabled: true
+field_type: entity_reference_revisions

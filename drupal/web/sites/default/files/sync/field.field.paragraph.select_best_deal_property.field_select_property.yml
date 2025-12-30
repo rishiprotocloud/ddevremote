@@ -1,0 +1,29 @@
+uuid: e225a6f8-cd57-4b55-b7df-6d32d7d1da30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_select_property
+    - node.type.best_deal
+    - paragraphs.paragraphs_type.select_best_deal_property
+id: paragraph.select_best_deal_property.field_select_property
+field_name: field_select_property
+entity_type: paragraph
+bundle: select_best_deal_property
+label: 'Select Property'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      best_deal: best_deal
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: best_deal
+field_type: entity_reference

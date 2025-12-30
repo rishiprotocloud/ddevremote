@@ -1,0 +1,25 @@
+uuid: 566fb0f1-4d6a-4dfa-9330-f50100fba364
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.select_best_deal_property.field_select_property
+    - paragraphs.paragraphs_type.select_best_deal_property
+id: paragraph.select_best_deal_property.default
+targetEntityType: paragraph
+bundle: select_best_deal_property
+mode: default
+content:
+  field_select_property:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,10 @@
+uuid: d37aebe2-0f24-4af3-ae3f-fe67ffcd1cc8
+langcode: en
+status: true
+dependencies: {  }
+id: select_best_deal_property
+label: 'Select Best Deal Property'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
