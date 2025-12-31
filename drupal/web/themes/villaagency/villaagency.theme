@@ -73,10 +73,34 @@ function villaagency_preprocess_node(array &$variables) {
 
       // Build entity query
       $query = \Drupal::entityTypeManager()->getStorage('node')->getQuery();
+      switch ($sort_type) {
+        case 'ASC':
+          $query->sort('created', 'ASC');
+          break;
+
+        case 'PRICE_DESC':
+          $query->sort('field_price', 'DESC');
+          break;
+
+        case 'PRICE_ASC':
+          $query->sort('field_price', 'ASC');
+          break;
+
+        case 'TITLE_ASC':
+          $query->sort('title', 'ASC');
+          break;
+
+        case 'TITLE_DESC':
+          $query->sort('title', 'DESC');
+          break;
+
+        default:
+          $query->sort('created', 'DESC'); // fallback
+      }
+
       $query->accessCheck(TRUE) // ✅ Fix for Drupal 10 requirement
         ->condition('type', 'best_deal')
         ->condition('status', 1)
-        ->sort('created', $sort_type)
         ->range(0, $limit);
 
       // Apply category filter if set
