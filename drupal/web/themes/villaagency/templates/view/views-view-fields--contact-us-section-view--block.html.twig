@@ -1,4 +1,13 @@
-<div class="contact section" style="background-image: url('{{ fields.field_background_image.entity.uri.content }}');">
+{% set image_entity = row._entity.field_background_image.entity %}
+{% if image_entity %}
+    <style>
+    .contact.section {
+        background-image: url({{ file_url(image_entity.uri.value) }});
+        
+    }
+    </style>
+{% endif %}
+<div class="contact section" >
   <div class="container">
     <div class="row">
       <div class="col-lg-4 offset-lg-4">

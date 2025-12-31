@@ -57,6 +57,13 @@ function villaagency_preprocess_node(array &$variables) {
       $view->execute();
       $variables['featured_best_deal_block'] = $view->render();
     }
+    $contact_us_section_view = Views::getView('contact_us_section_view');
+    if ($contact_us_section_view) {
+      $contact_us_section_view->setDisplay('block_1'); // replace with your actual block machine name
+      $contact_us_section_view->preExecute();
+      $contact_us_section_view->execute();
+      $variables['contact_us_section_view_block'] = $contact_us_section_view->render();
+    }
   
     $node = $variables['node'];
     $field_property_section_enable = $node->get('field_property_section_enable')->value;

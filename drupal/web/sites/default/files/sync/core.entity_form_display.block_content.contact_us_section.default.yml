@@ -7,10 +7,12 @@ dependencies:
     - field.field.block_content.contact_us_section.body
     - field.field.block_content.contact_us_section.field_background_image
     - field.field.block_content.contact_us_section.field_contact_us_heading
+    - field.field.block_content.contact_us_section.field_contact_us_map_url
     - field.field.block_content.contact_us_section.field_tag_line
     - image.style.thumbnail
   module:
     - image
+    - link
     - text
 id: block_content.contact_us_section.default
 targetEntityType: block_content
@@ -42,6 +44,14 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_contact_us_map_url:
+    type: link_default
+    weight: 30
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   field_tag_line:
     type: string_textfield
