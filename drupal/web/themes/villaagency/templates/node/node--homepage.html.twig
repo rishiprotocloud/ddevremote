@@ -62,6 +62,77 @@
  * @ingroup themeable
  */
 #}
+<pre>
+{{dump()}}
+</pre>
+<div class="homepage-wrapper">
+   {% if banner_slider_view_block %}
+    <div class="featured-deal-region">
+      {{ banner_slider_view_block }}
+    </div>
+  {% endif %}
+  {% if featured_best_deal_block %}
+    <div class="featured-deal-region">
+      {{ featured_best_deal_block }}
+    </div>
+  {% endif %}
+</div>
+<div class="video section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 offset-lg-4">
+        <div class="section-heading text-center">
+          <h6>| Video View</h6>
+          <h2>Get Closer View & Different Feeling</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="video-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        <div class="video-frame">
+          <img src="{{ directory }}/assets/images/video-frame.jpg" alt="">
+          <a href="https://youtube.com" target="_blank"><i class="fa fa-play"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="fun-facts">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="wrapper">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="counter">
+                <h2 class="timer count-title count-number" data-to="34" data-speed="1000"></h2>
+                  <p class="count-text ">Buildings<br>Finished Now</p>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="counter">
+                <h2 class="timer count-title count-number" data-to="12" data-speed="1000"></h2>
+                <p class="count-text ">Years<br>Experience</p>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="counter">
+                <h2 class="timer count-title count-number" data-to="24" data-speed="1000"></h2>
+                <p class="count-text ">Awwards<br>Won 2023</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <article{{ attributes }}>
 
   {{ title_prefix }}
@@ -73,91 +144,116 @@
   {{ title_suffix }}
 
   {% if display_submitted %}
-    <footer>
+    {# <footer>
       {{ author_picture }}
       <div{{ author_attributes }}>
         {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
         {{ metadata }}
       </div>
-    </footer>
+    </footer> #}
   {% endif %}
 
   <div{{ content_attributes }}>
-    {{ content }}
+    {# {{ content }} #}
+    {{content.body}}
   </div>
 
-  
-  {# Loop through Property Paragraphs #}
-    {% for paragraph in node.field_property_paragraph %}
-      {% set best_deal_node = paragraph.entity.field_select_property.entity %}
-
-      {% if best_deal_node %}
-        <div class="best-deal-block">
-          <h2>{{ best_deal_node.label }}</h2>
-
-          {# Body field (long text with summary) #}
-          {% if best_deal_node.body.value %}
-            <div class="description">
-              {{ best_deal_node.body.value }}
-            </div>
-          {% endif %}
-
-          {# Deal Image #}
-          {% if best_deal_node.field_deal_image.entity %}
-            <div class="deal-image">
-              <img src="{{ file_url(best_deal_node.field_deal_image.entity.fileuri) }}" alt="Deal Image">
-            </div>
-          {% endif %}
-
-          {# Floor Number #}
-          {% if best_deal_node.field_floor_number.value %}
-            <p><strong>Floor:</strong> {{ best_deal_node.field_floor_number.value }}</p>
-          {% endif %}
-
-          {# Number of Rooms #}
-          {% if best_deal_node.field_number_of_rooms.value %}
-            <p><strong>Rooms:</strong> {{ best_deal_node.field_number_of_rooms.value }}</p>
-          {% endif %}
-
-          {# Is Featured #}
-          {% if best_deal_node.field_is_featured.value is not null %}
-            <p><strong>Featured:</strong> {{ best_deal_node.field_is_featured.value ? 'Yes' : 'No' }}</p>
-          {% endif %}
-
-          {# Taxonomy Terms from field_type #}
-          {% if best_deal_node.field_type %}
-            <div class="deal-type">
-              <strong>Type:</strong>
-              <ul>
-                {% for term in best_deal_node.field_type %}
-                  <li>
-                    {{ term.entity.label }}
-                    {# Optional: link to taxonomy term page #}
-                    {# <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': term.entity.id}) }}">
-                        {{ term.entity.label }}
-                      </a> #}
-                  </li>
-                {% endfor %}
-              </ul>
-            </div>
-          {% endif %}
-
-          {# FAQs List (Paragraph reference) #}
-          {% if best_deal_node.field_faq_s_list %}
-            <div class="faq-list">
-              <h3>FAQs</h3>
-              {% for faq in best_deal_node.field_faq_s_list %}
-                {% set faq_entity = faq.entity %}
-                <div class="faq-item">
-                  <h4>{{ faq_entity.field_question.value }}</h4>
-                  <p>{{ faq_entity.field_answer.value }}</p>
-                </div>
-              {% endfor %}
-            </div>
-          {% endif %}
+  <div class="section best-deal">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="section-heading">
+            <h6>| Best Deal</h6>
+            <h2>Find Your Best Deal Right Now!</h2>
+          </div>
         </div>
-      {% endif %}
-    {% endfor %}
+        <div class="col-lg-12">
+          <div class="tabs-content">
+            <div class="row">
+              <div class="nav-wrapper">
+                <ul class="nav nav-tabs" role="tablist">
+                  {% for paragraph in node.field_property_paragraph %}
+                    {% set best_deal_node = paragraph.entity.field_select_property.entity %}
+                    {% if best_deal_node and best_deal_node.field_type|length %}
+                      {% set term = best_deal_node.field_type.0.entity %}
+                      {% set tab_id = term.label|lower|replace({' ':'-'}) %}
+
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link {% if loop.first %}active{% endif %}"
+                                id="{{ tab_id }}-tab"
+                                data-bs-toggle="tab"
+                                data-bs-target="#{{ tab_id }}"
+                                type="button"
+                                role="tab"
+                                aria-controls="{{ tab_id }}"
+                                aria-selected="{{ loop.first ? 'true' : 'false' }}">
+                          {{ term.label }}
+                        </button>
+                      </li>
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+              </div>              
+              <div class="tab-content" id="myTabContent">
+                {% for paragraph in node.field_property_paragraph %}
+                  {% set best_deal_node = paragraph.entity.field_select_property.entity %}
+                  {% if best_deal_node and best_deal_node.field_type|length %}
+                    {% set term = best_deal_node.field_type.0.entity %}
+                    {% set tab_id = term.label|lower|replace({' ':'-'}) %}
+
+                    <div class="tab-pane fade {% if loop.first %}show active{% endif %}"
+                        id="{{ tab_id }}"
+                        role="tabpanel"
+                        aria-labelledby="{{ tab_id }}-tab">
+                      <div class="row">
+                        <div class="col-lg-3">
+                          <div class="info-table">
+                            <ul>
+                              {% if best_deal_node.field_total_space.value %}
+                                <li>Total Flat Space <span>{{ best_deal_node.field_total_space.value }} m2</span></li>
+                              {% endif %}
+                              {% if best_deal_node.field_floor_number.value %}
+                                <li>Floor number <span>{{ best_deal_node.field_floor_number.value }}</span></li>
+                              {% endif %}
+                              {% if best_deal_node.field_number_of_rooms.value %}
+                                <li>Number of rooms <span>{{ best_deal_node.field_number_of_rooms.value }}</span></li>
+                              {% endif %}
+                              {% if best_deal_node.field_parking_available.value %}
+                                <li>Parking Available <span>{{ best_deal_node.field_parking_available.value ? 'Yes' : 'No' }}</span></li>
+                              {% endif %}
+                              {% if best_deal_node.field_payment_process.value %}
+                                <li>Payment Process <span>{{ best_deal_node.field_payment_process.value }}</span></li>
+                              {% endif %}
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          {% if best_deal_node.field_deal_image.entity %}
+                            <img src="{{ file_url(best_deal_node.field_deal_image.entity.fileuri) }}" alt="">
+                          {% endif %}
+                        </div>
+                        <div class="col-lg-3">
+                          <h4>{{ best_deal_node.label }}</h4>
+                          {% if best_deal_node.body.value %}
+                            <p>{{ best_deal_node.body.value }}</p>
+                          {% endif %}
+                          <div class="icon-button">
+                            <a href="{{ path('entity.node.canonical', {'node': best_deal_node.id}) }}">
+                              <i class="fa fa-calendar"></i> Schedule a visit
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
