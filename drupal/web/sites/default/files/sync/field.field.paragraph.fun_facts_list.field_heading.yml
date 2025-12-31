@@ -1,0 +1,19 @@
+uuid: ca7e612a-f977-4aa2-a57f-ea5c965dceda
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.fun_facts_list
+id: paragraph.fun_facts_list.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: fun_facts_list
+label: Heading
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

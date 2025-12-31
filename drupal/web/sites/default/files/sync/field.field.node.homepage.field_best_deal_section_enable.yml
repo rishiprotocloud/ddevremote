@@ -1,0 +1,21 @@
+uuid: 0c848ca5-811f-4db1-b0ee-312326fcbf5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_best_deal_section_enable
+    - node.type.homepage
+id: node.homepage.field_best_deal_section_enable
+field_name: field_best_deal_section_enable
+entity_type: node
+bundle: homepage
+label: 'Best Deal Section Enable'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

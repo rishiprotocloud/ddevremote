@@ -1,0 +1,10 @@
+uuid: cad87dbc-9b5a-4b81-b197-dc68b926c3c0
+langcode: en
+status: true
+dependencies: {  }
+id: fun_facts_list
+label: 'Fun Facts List'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,37 @@
+uuid: 9905dd5f-693e-4b09-a2cd-f56dbd3157e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fun_facts_list
+    - node.type.homepage
+    - paragraphs.paragraphs_type.fun_facts_list
+  module:
+    - entity_reference_revisions
+id: node.homepage.field_fun_facts_list
+field_name: field_fun_facts_list
+entity_type: node
+bundle: homepage
+label: 'Fun Facts List'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      fun_facts_list: fun_facts_list
+    negate: 0
+    target_bundles_drag_drop:
+      best_deal_faqs:
+        weight: 4
+        enabled: false
+      fun_facts_list:
+        weight: 5
+        enabled: true
+      select_best_deal_property:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,23 @@
+uuid: 7d513b51-9aa4-41bf-a108-90d7594d4b35
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_counter
+    - paragraphs.paragraphs_type.fun_facts_list
+id: paragraph.fun_facts_list.field_counter
+field_name: field_counter
+entity_type: paragraph
+bundle: fun_facts_list
+label: Counter
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

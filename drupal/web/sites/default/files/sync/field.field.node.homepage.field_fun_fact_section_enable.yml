@@ -1,0 +1,21 @@
+uuid: 84e5a410-b0d4-4403-93eb-b34f4ea276e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fun_fact_section_enable
+    - node.type.homepage
+id: node.homepage.field_fun_fact_section_enable
+field_name: field_fun_fact_section_enable
+entity_type: node
+bundle: homepage
+label: 'Fun Fact Section Enable'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

@@ -1,0 +1,23 @@
+uuid: 20303d0c-735d-40e7-a770-df28013f14e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video_url
+    - node.type.homepage
+  module:
+    - link
+id: node.homepage.field_video_url
+field_name: field_video_url
+entity_type: node
+bundle: homepage
+label: 'Video Url'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

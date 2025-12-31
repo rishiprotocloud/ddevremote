@@ -75,62 +75,90 @@
     </div>
   {% endif %}
 </div>
-<div class="video section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 offset-lg-4">
-        <div class="section-heading text-center">
-          <h6>| Video View</h6>
-          <h2>Get Closer View & Different Feeling</h2>
+{% if node.field_video_section_enable.value %}
+  {% if node.field_video_background_image.entity %}
+    {% set image_url = file_url(node.field_video_background_image.entity.fileuri) %}
+    <style>
+    .video {
+        background-image: url({{image_url}});
+        
+    }
+    </style>
+
+  {% endif %}
+  <div class="video section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 offset-lg-4">
+          <div class="section-heading text-center">
+            <h6>| {{ node.field_video_tag_line.value }}</h6>
+            <h2>{{ node.field_video_heading.value }}</h2>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+  
+  <div class="video-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+          <div class="video-frame">
+            {% if node.field_video_image.entity %}
+              {% set image_url = file_url(node.field_video_image.entity.fileuri) %}
+              <img src="{{ image_url }}" alt="">
+            {% endif %}
 
-<div class="video-content">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-10 offset-lg-1">
-        <div class="video-frame">
-          <img src="{{ directory }}/assets/images/video-frame.jpg" alt="">
-          <a href="https://youtube.com" target="_blank"><i class="fa fa-play"></i></a>
+            {% if node.field_video_url is not empty %}
+              {% set video_link = node.field_video_url.0.uri %}
+              <a href="{{ video_link }}" target="_blank">
+                <i class="fa fa-play"></i>
+              </a>
+            {% endif %}
+
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+{% endif %}
 
-<div class="fun-facts">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="wrapper">
-          <div class="row">
-            <div class="col-lg-4">
-              <div class="counter">
-                <h2 class="timer count-title count-number" data-to="34" data-speed="1000"></h2>
-                  <p class="count-text ">Buildings<br>Finished Now</p>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="counter">
-                <h2 class="timer count-title count-number" data-to="12" data-speed="1000"></h2>
-                <p class="count-text ">Years<br>Experience</p>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="counter">
-                <h2 class="timer count-title count-number" data-to="24" data-speed="1000"></h2>
-                <p class="count-text ">Awwards<br>Won 2023</p>
-              </div>
+
+
+{% if node.field_fun_fact_section_enable.value and node.field_fun_facts_list|length > 0 %}
+  <div class="fun-facts">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="wrapper">
+            <div class="row">
+              
+              {% for fun_fact in node.field_fun_facts_list %}
+                <div class="col-lg-4">
+                  <div class="counter">
+                    {% set paragraph = fun_fact.entity %}
+                    {% if paragraph.field_counter.value %}
+                      <h2 class="timer count-title count-number"
+                          data-to="{{ paragraph.field_counter.value }}"
+                          data-speed="1000"></h2>
+                    {% endif %}
+                    {% if paragraph.field_heading.value %}
+                      <p class="count-text">{{ paragraph.field_heading.value|raw }}</p>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endfor %}
+
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+{% endif %}
+
+
+
 <article{{ attributes }}>
 
   {{ title_prefix }}

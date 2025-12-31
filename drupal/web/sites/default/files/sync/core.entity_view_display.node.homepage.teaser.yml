@@ -5,7 +5,16 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.homepage.body
+    - field.field.node.homepage.field_best_deal_section_enable
+    - field.field.node.homepage.field_fun_fact_section_enable
+    - field.field.node.homepage.field_fun_facts_list
     - field.field.node.homepage.field_property_paragraph
+    - field.field.node.homepage.field_video_background_image
+    - field.field.node.homepage.field_video_heading
+    - field.field.node.homepage.field_video_image
+    - field.field.node.homepage.field_video_section_enable
+    - field.field.node.homepage.field_video_tag_line
+    - field.field.node.homepage.field_video_url
     - node.type.homepage
   module:
     - text
@@ -29,4 +38,13 @@ content:
     weight: 100
     region: content
 hidden:
+  field_best_deal_section_enable: true
+  field_fun_fact_section_enable: true
+  field_fun_facts_list: true
   field_property_paragraph: true
+  field_video_background_image: true
+  field_video_heading: true
+  field_video_image: true
+  field_video_section_enable: true
+  field_video_tag_line: true
+  field_video_url: true

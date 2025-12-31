@@ -4,10 +4,21 @@ status: true
 dependencies:
   config:
     - field.field.node.homepage.body
+    - field.field.node.homepage.field_best_deal_section_enable
+    - field.field.node.homepage.field_fun_fact_section_enable
+    - field.field.node.homepage.field_fun_facts_list
     - field.field.node.homepage.field_property_paragraph
+    - field.field.node.homepage.field_video_background_image
+    - field.field.node.homepage.field_video_heading
+    - field.field.node.homepage.field_video_image
+    - field.field.node.homepage.field_video_section_enable
+    - field.field.node.homepage.field_video_tag_line
+    - field.field.node.homepage.field_video_url
     - node.type.homepage
   module:
     - entity_reference_revisions
+    - image
+    - link
     - text
     - user
 id: node.homepage.default
@@ -22,6 +33,35 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  field_best_deal_section_enable:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_fun_fact_section_enable:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_fun_facts_list:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 109
+    region: content
   field_property_paragraph:
     type: entity_reference_revisions_entity_view
     label: above
@@ -30,6 +70,66 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_video_background_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_video_heading:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_video_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_video_section_enable:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_video_tag_line:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_video_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 106
     region: content
   links:
     settings: {  }

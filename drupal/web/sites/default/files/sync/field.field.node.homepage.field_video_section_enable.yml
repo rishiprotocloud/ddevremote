@@ -1,0 +1,21 @@
+uuid: ecd11d2c-6347-449a-92f9-4a7d9d3a56ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video_section_enable
+    - node.type.homepage
+id: node.homepage.field_video_section_enable
+field_name: field_video_section_enable
+entity_type: node
+bundle: homepage
+label: 'Video Section Enable'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

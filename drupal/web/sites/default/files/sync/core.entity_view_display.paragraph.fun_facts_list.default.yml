@@ -1,0 +1,31 @@
+uuid: d89e96e3-6600-4a06-bbc4-c67736414c62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fun_facts_list.field_counter
+    - field.field.paragraph.fun_facts_list.field_heading
+    - paragraphs.paragraphs_type.fun_facts_list
+id: paragraph.fun_facts_list.default
+targetEntityType: paragraph
+bundle: fun_facts_list
+mode: default
+content:
+  field_counter:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_heading:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }
