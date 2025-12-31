@@ -1,0 +1,39 @@
+<div class="contact section" style="background-image: url('{{ fields.field_background_image.entity.uri.content }}');">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 offset-lg-4">
+        <div class="section-heading text-center">
+          <h6>| {{ fields.field_tag_line.content }}</h6>
+          <h2>{{ fields.field_contact_us_heading.content }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="contact-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <div id="map">
+          {{ fields.field_map_embed_code.content }}
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="item phone">
+              <h6>{{ fields.field_phone_number.content }}<br><span>Phone Number</span></h6>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="item email">
+              <h6>{{ fields.field_email_address.content }}<br><span>Business Email</span></h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        {# Form can be static or replaced with Webform block later #}
+      </div>
+    </div>
+  </div>
+</div>

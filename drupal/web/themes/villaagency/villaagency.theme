@@ -60,7 +60,6 @@ function villaagency_preprocess_node(array &$variables) {
   
     $node = $variables['node'];
     $field_property_section_enable = $node->get('field_property_section_enable')->value;
-    echo 'field_property_section_enable====>'.$field_property_section_enable;
     if($field_property_section_enable){
       // Get sorting type
       $sort_type = $node->get('field_sorting_type')->value ?: 'DESC';
