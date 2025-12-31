@@ -284,3 +284,52 @@
 
 
 </article>
+{% if filtered_properties is not empty %}
+  <div class="properties section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 offset-lg-4">
+          <div class="section-heading text-center">
+            <h6>| {{node.field_property_tag_line.value}}</h6>
+            <h2>{{node.field_property_heading.value}}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        {% for property in filtered_properties %}
+          <div class="col-lg-4 col-md-6">
+            <div class="item">
+              {% if property.field_deal_image.entity %}
+                {% set image_url = file_url(property.field_deal_image.entity.fileuri) %}
+                <a href="{{ path('entity.node.canonical', {'node': property.id}) }}">
+                  <img src="{{ image_url }}" alt="">
+                </a>
+              {% endif %}
+              <span class="category">
+                {% if property.field_type.entity %}
+                  {{ property.field_type.entity.name.value }}
+                {% endif %}
+              </span>
+              <h6>${{ property.field_price.value }}</h6>
+              <h4>
+                <a href="{{ path('entity.node.canonical', {'node': property.id}) }}">
+                  {{ property.title.value }}
+                </a>
+              </h4>
+              <ul>
+                <li>Bedrooms: <span>{{ property.field_number_of_rooms.value }}</span></li>
+                <li>Bathrooms: <span>{{ property.field_bathrooms.value }}</span></li>
+                <li>Area: <span>{{ property.field_total_flat_space.value }}</span></li>
+                <li>Floor: <span>{{ property.field_floor_number.value }}</span></li>
+                <li>Parking: <span>{{ property.field_parking_available.value ? 'Yes' : 'No' }}</span></li>
+              </ul>
+              <div class="main-button">
+                <a href="{{ path('entity.node.canonical', {'node': property.id}) }}">Schedule a visit</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endif %}

@@ -7,7 +7,13 @@ dependencies:
     - field.field.node.homepage.field_best_deal_section_enable
     - field.field.node.homepage.field_fun_fact_section_enable
     - field.field.node.homepage.field_fun_facts_list
+    - field.field.node.homepage.field_number_of_properties
+    - field.field.node.homepage.field_property_category
+    - field.field.node.homepage.field_property_heading
     - field.field.node.homepage.field_property_paragraph
+    - field.field.node.homepage.field_property_section_enable
+    - field.field.node.homepage.field_property_tag_line
+    - field.field.node.homepage.field_sorting_type
     - field.field.node.homepage.field_video_background_image
     - field.field.node.homepage.field_video_heading
     - field.field.node.homepage.field_video_image
@@ -30,6 +36,7 @@ third_party_settings:
         - group_videos
         - group_fun_facts
         - group_beast_deal
+        - group_property_section
       label: 'Home Page Sections'
       region: content
       parent_name: ''
@@ -97,6 +104,27 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
+    group_property_section:
+      children:
+        - field_property_section_enable
+        - field_property_tag_line
+        - field_property_heading
+        - field_sorting_type
+        - field_number_of_properties
+        - field_property_category
+      label: 'Property Section'
+      region: content
+      parent_name: group_home_page_sections
+      weight: 23
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: true
 id: node.homepage.default
 targetEntityType: node
 bundle: homepage
@@ -144,6 +172,31 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
+  field_number_of_properties:
+    type: number
+    weight: 140
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_property_category:
+    type: entity_reference_autocomplete
+    weight: 141
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_property_heading:
+    type: string_textfield
+    weight: 138
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_property_paragraph:
     type: entity_reference_paragraphs
     weight: 132
@@ -155,6 +208,27 @@ content:
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: ''
+    third_party_settings: {  }
+  field_property_section_enable:
+    type: boolean_checkbox
+    weight: 136
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_property_tag_line:
+    type: string_textfield
+    weight: 137
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_sorting_type:
+    type: options_select
+    weight: 139
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_video_background_image:
     type: image_image

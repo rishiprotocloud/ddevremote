@@ -1,0 +1,19 @@
+uuid: 73784b3c-b210-474d-ac79-d4e141f909f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_property_tag_line
+    - node.type.homepage
+id: node.homepage.field_property_tag_line
+field_name: field_property_tag_line
+entity_type: node
+bundle: homepage
+label: 'Property Tag Line'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

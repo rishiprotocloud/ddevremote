@@ -1,0 +1,19 @@
+uuid: 35779cf6-8580-4a29-815d-0eee3809be73
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_property_heading
+    - node.type.homepage
+id: node.homepage.field_property_heading
+field_name: field_property_heading
+entity_type: node
+bundle: homepage
+label: 'Property Heading'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

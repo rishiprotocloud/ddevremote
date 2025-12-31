@@ -1,0 +1,39 @@
+uuid: f3b92ba3-70a3-4742-95e7-3dba72db13b1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_sorting_type
+field_name: field_sorting_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: DESC
+      label: 'Newest First'
+    -
+      value: ASC
+      label: 'Oldest First'
+    -
+      value: PRICE_DESC
+      label: 'Price High → Low'
+    -
+      value: PRICE_ASC
+      label: 'Price Low → High'
+    -
+      value: TITLE_ASC
+      label: 'Title A → Z'
+    -
+      value: TITLE_DESC
+      label: 'Title Z → A'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

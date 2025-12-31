@@ -1,0 +1,21 @@
+uuid: 3134b054-7f6d-4fab-a99b-e584598a732f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sorting_type
+    - node.type.homepage
+  module:
+    - options
+id: node.homepage.field_sorting_type
+field_name: field_sorting_type
+entity_type: node
+bundle: homepage
+label: 'Sorting Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

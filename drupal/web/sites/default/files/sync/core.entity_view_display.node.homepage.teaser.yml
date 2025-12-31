@@ -8,7 +8,13 @@ dependencies:
     - field.field.node.homepage.field_best_deal_section_enable
     - field.field.node.homepage.field_fun_fact_section_enable
     - field.field.node.homepage.field_fun_facts_list
+    - field.field.node.homepage.field_number_of_properties
+    - field.field.node.homepage.field_property_category
+    - field.field.node.homepage.field_property_heading
     - field.field.node.homepage.field_property_paragraph
+    - field.field.node.homepage.field_property_section_enable
+    - field.field.node.homepage.field_property_tag_line
+    - field.field.node.homepage.field_sorting_type
     - field.field.node.homepage.field_video_background_image
     - field.field.node.homepage.field_video_heading
     - field.field.node.homepage.field_video_image
@@ -41,7 +47,13 @@ hidden:
   field_best_deal_section_enable: true
   field_fun_fact_section_enable: true
   field_fun_facts_list: true
+  field_number_of_properties: true
+  field_property_category: true
+  field_property_heading: true
   field_property_paragraph: true
+  field_property_section_enable: true
+  field_property_tag_line: true
+  field_sorting_type: true
   field_video_background_image: true
   field_video_heading: true
   field_video_image: true

@@ -1,0 +1,21 @@
+uuid: 2c4759bc-d590-4a86-9a39-718f1ea88227
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_property_section_enable
+    - node.type.homepage
+id: node.homepage.field_property_section_enable
+field_name: field_property_section_enable
+entity_type: node
+bundle: homepage
+label: 'Property Section Enable'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

@@ -1,7 +1,8 @@
 <?php
 
 declare(strict_types=1);
-
+use Drupal\views\Views;
+use Drupal\node\Entity\Node;
 /**
  * @file
  * Functions to support theming in the VillaAgency theme.
@@ -33,7 +34,6 @@ function villaagency_preprocess_page(&$variables) {
 function villaagency_preprocess_node11111(array &$variables): void {
 
 }
-use Drupal\views\Views;
 
 function villaagency_preprocess_node(array &$variables) {
   // Only apply to homepage content type
@@ -49,14 +49,51 @@ function villaagency_preprocess_node(array &$variables) {
         $banner_slider_view->execute();
         $variables['banner_slider_view_block'] = $banner_slider_view->render();
     }
-  // Load the Featured Best Deal view block
-  $view = Views::getView('featured_best_deal');
-  if ($view) {
-    $view->setDisplay('block_1'); // replace with your actual block machine name
-    $view->preExecute();
-    $view->execute();
-    $variables['featured_best_deal_block'] = $view->render();
-  }
+    // Load the Featured Best Deal view block
+    $view = Views::getView('featured_best_deal');
+    if ($view) {
+      $view->setDisplay('block_1'); // replace with your actual block machine name
+      $view->preExecute();
+      $view->execute();
+      $variables['featured_best_deal_block'] = $view->render();
+    }
+  
+    $node = $variables['node'];
+    $field_property_section_enable = $node->get('field_property_section_enable')->value;
+    echo 'field_property_section_enable====>'.$field_property_section_enable;
+    if($field_property_section_enable){
+      // Get sorting type
+      $sort_type = $node->get('field_sorting_type')->value ?: 'DESC';
+
+      // Get number of properties
+      $limit = $node->get('field_number_of_properties')->value ?: 6;
+
+      // Get selected category (taxonomy term ID)
+      $category_tid = $node->get('field_property_category')->target_id;
+
+      // Build entity query
+      $query = \Drupal::entityTypeManager()->getStorage('node')->getQuery();
+      $query->accessCheck(TRUE) // ✅ Fix for Drupal 10 requirement
+        ->condition('type', 'best_deal')
+        ->condition('status', 1)
+        ->sort('created', $sort_type)
+        ->range(0, $limit);
+
+      // Apply category filter if set
+      if ($category_tid) {
+        $query->condition('field_type.target_id', $category_tid);
+      }
+
+      // Execute query
+      $nids = $query->execute();
+      $nodes = Node::loadMultiple($nids);
+
+      // Pass to Twig
+      $variables['filtered_properties'] = $nodes;
+      $variables['field_property_section_enable'] = $field_property_section_enable;
+
+    }
+    
 }
 
 
