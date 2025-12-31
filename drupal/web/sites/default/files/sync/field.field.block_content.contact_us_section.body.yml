@@ -1,0 +1,24 @@
+uuid: ef54d6ec-fc9a-4c3a-bc08-b547292664d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_us_section
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content.contact_us_section.body
+field_name: body
+entity_type: block_content
+bundle: contact_us_section
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

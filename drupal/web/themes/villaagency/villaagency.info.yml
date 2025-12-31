@@ -18,5 +18,6 @@ regions:
   fun_facts : 'Fun Facts'
   best_deal : 'Best Deal'
   properties_section : 'Properties Section'
+  contact_us_section : 'Contact Us Section'
   content : 'Content'
   footer: 'Footer'
