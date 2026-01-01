@@ -1,0 +1,19 @@
+{#
+/**
+ * Custom exposed filter as buttons like template
+ */
+#}
+<ul class="properties-filter">
+  <li>
+    <a class="is_active" href="{{ path('view.best_deals.page_1') }}" data-filter="*">Show All</a>
+  </li>
+  <li>
+    <a href="{{ path('view.best_deals.page_1', {'type': 'apartment'}) }}" data-filter=".adv">Apartment</a>
+  </li>
+  <li>
+    <a href="{{ path('view.best_deals.page_1', {'type': 'villa_house'}) }}" data-filter=".str">Villa House</a>
+  </li>
+  <li>
+    <a href="{{ path('view.best_deals.page_1', {'type': 'penthouse'}) }}" data-filter=".rac">Penthouse</a>
+  </li>
+</ul>

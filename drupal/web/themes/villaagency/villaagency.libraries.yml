@@ -8,6 +8,7 @@ global:
     assets/js/owl-carousel.js: {}
     assets/js/counter.js: {}
     assets/js/custom.js: {}
+    js/properties-isotope.js: {}   # <-- YE LINE ADD KAREIN
   css:
     base:
       css/base/elements.css: {}

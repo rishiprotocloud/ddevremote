@@ -1,0 +1,39 @@
+{#
+/**
+ * Single property item in grid
+ */
+#}
+{% set type_name = content.field_type.0['#markup']|default('Luxury Villa') %}
+
+{% set category_classes = {
+  'Apartment': 'adv',
+  'Villa House': 'str',
+  'Penthouse': 'rac'
+} %}
+
+{% set filter_class = category_classes[type_name]|default('') %}
+
+<div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 {{ filter_class }}">
+  <div class="item">
+    <a href="{{ view_node }}">{{ content.field_deal_image }}</a>
+    
+    <span class="category">{{ type_name }}</span>
+    
+    {# Agar price field hai to yahan daalen, warna static #}
+    <h6>$1,460,000</h6>
+    
+    <h4><a href="{{ view_node }}">{{ title }}</a></h4>
+    
+    <ul>
+      <li>Bedrooms: <span>{{ content.field_number_of_rooms }}</span></li>
+      <li>Bathrooms: <span>4</span></li> {# Agar bathrooms field hai to use karein #}
+      <li>Area: <span>{{ content.field_total_flat_space }}m2</span></li>
+      <li>Floor: <span>{{ content.field_floor_number }}</span></li>
+      <li>Parking: <span>{{ content.field_parking_available ? 'Yes' : 'No' }} spots</span></li>
+    </ul>
+    
+    <div class="main-button">
+      <a href="{{ view_node }}">Schedule a visit</a>
+    </div>
+  </div>
+</div>
