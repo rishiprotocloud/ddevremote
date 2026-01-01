@@ -3,6 +3,7 @@
 declare(strict_types=1);
 use Drupal\views\Views;
 use Drupal\node\Entity\Node;
+
 /**
  * @file
  * Functions to support theming in the VillaAgency theme.
@@ -125,5 +126,65 @@ function villaagency_preprocess_node(array &$variables) {
     }
     
 }
+
+
+
+
+
+
+function villaagency_preprocess_views_view_fields(&$variables) {
+  // Replace with your exact view name and display ID.
+  if ($variables['view']->id() == 'contact_us_section_view' && $variables['view']->current_display == 'block_1') {
+    $message = \Drupal::entityTypeManager()
+      ->getStorage('contact_message')
+      ->create(['contact_form' => 'contact_us']);
+
+    $form = \Drupal::service('entity.form_builder')->getForm($message);
+    $variables['contact_form'] = $form;
+  }
+}
+
+
+
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function villaagency_theme($existing, $type, $theme, $path) {
+  return [
+    'contact_message_contact_us_form' => [
+      'render element' => 'form',
+      'base hook' => 'form',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function villaagency_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'contact_message_contact_us_form') {
+    // Custom template use karne ke liye
+    $form['#theme'][] = 'contact_message_contact_us_form';
+
+    // Button class
+    $form['actions']['submit']['#attributes']['class'][] = 'orange-button';
+    $form['actions']['submit']['#value'] = t('Send Message'); // button text change
+
+    // Placeholders
+    $form['name']['#attributes']['placeholder'] = 'Your Name...';
+    $form['mail']['#attributes']['placeholder'] = 'Your E-mail...';
+    $form['subject']['#attributes']['placeholder'] = 'Subject...';
+    $form['message']['#attributes']['placeholder'] = 'Your Message';
+
+    // Required fields ke liye asterisk hatane ke liye (clean look)
+    $form['name']['#required'] = TRUE;
+    $form['mail']['#required'] = TRUE;
+  }
+}
+
+
 
 

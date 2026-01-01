@@ -1,0 +1,21 @@
+uuid: 4875d86f-05e7-4b40-827a-ae1bbf1f630b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_contact_info_class
+    - paragraphs.paragraphs_type.contact_info_list
+  module:
+    - options
+id: paragraph.contact_info_list.field_contact_info_class
+field_name: field_contact_info_class
+entity_type: paragraph
+bundle: contact_info_list
+label: 'Contact Info Class'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

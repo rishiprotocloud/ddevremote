@@ -1,0 +1,43 @@
+uuid: c2215de7-fad5-44d6-b337-4d322a8e62bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_info_list.field_contact_info_class
+    - field.field.paragraph.contact_info_list.field_contact_info_heading
+    - field.field.paragraph.contact_info_list.field_contact_info_icon
+    - paragraphs.paragraphs_type.contact_info_list
+  module:
+    - image
+    - options
+id: paragraph.contact_info_list.default
+targetEntityType: paragraph
+bundle: contact_info_list
+mode: default
+content:
+  field_contact_info_class:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_contact_info_heading:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_contact_info_icon:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

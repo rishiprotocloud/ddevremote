@@ -6,10 +6,12 @@ dependencies:
     - block_content.type.contact_us_section
     - field.field.block_content.contact_us_section.body
     - field.field.block_content.contact_us_section.field_background_image
+    - field.field.block_content.contact_us_section.field_contact_info
     - field.field.block_content.contact_us_section.field_contact_us_heading
     - field.field.block_content.contact_us_section.field_contact_us_map_url
     - field.field.block_content.contact_us_section.field_tag_line
   module:
+    - entity_reference_revisions
     - image
     - link
     - text
@@ -35,6 +37,15 @@ content:
         attribute: lazy
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_contact_info:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_contact_us_heading:
     type: string

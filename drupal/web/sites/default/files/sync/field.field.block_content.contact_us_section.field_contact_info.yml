@@ -1,0 +1,40 @@
+uuid: 4ad8485c-cb5b-40bb-bffa-ad3a347e234c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_us_section
+    - field.storage.block_content.field_contact_info
+    - paragraphs.paragraphs_type.contact_info_list
+  module:
+    - entity_reference_revisions
+id: block_content.contact_us_section.field_contact_info
+field_name: field_contact_info
+entity_type: block_content
+bundle: contact_us_section
+label: 'Contact Info'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      contact_info_list: contact_info_list
+    negate: 0
+    target_bundles_drag_drop:
+      best_deal_faqs:
+        weight: 5
+        enabled: false
+      contact_info_list:
+        weight: 6
+        enabled: true
+      fun_facts_list:
+        weight: 7
+        enabled: false
+      select_best_deal_property:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions
