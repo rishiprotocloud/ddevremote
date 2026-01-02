@@ -1,0 +1,16 @@
+{# views-exposed-form--best-deals.html.twig #}
+<ul class="properties-filter">
+  {# Show All option #}
+  <li>
+    <a class="is_active" href="{{ path('<current>') }}">Show All</a>
+  </li>
+
+  {# Loop through Drupal filter options dynamically #}
+  {% for key, option in form.field_type_target_id['#options'] %}
+    {% if key != 'All' %}
+      <li>
+        <a href="{{ path('<current>', { 'field_type_target_id': key }) }}">{{ option }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
