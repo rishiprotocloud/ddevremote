@@ -13,6 +13,11 @@ dependencies:
     - field.storage.node.field_type
     - node.type.best_deal
     - taxonomy.vocabulary.best_deal_type
+  content:
+    - 'taxonomy_term:best_deal_type:0aca790d-56f1-4918-9074-3028cbaedfde'
+    - 'taxonomy_term:best_deal_type:0ae41377-9d55-4943-9ddd-60fdcd388bc4'
+    - 'taxonomy_term:best_deal_type:12c6f62a-d617-4d78-8e74-86a341734da7'
+    - 'taxonomy_term:best_deal_type:175199b1-579d-42a8-9f5d-64de923f86c1'
   module:
     - image
     - node
@@ -209,13 +214,17 @@ display:
           admin_label: ''
           plugin_id: taxonomy_index_tid
           operator: or
-          value: {  }
+          value:
+            1: 1
+            4: 4
+            3: 3
+            2: 2
           group: 1
           exposed: true
           expose:
             operator_id: field_type_target_id_op
             label: 'Type (field_type)'
-            description: null
+            description: ''
             use_operator: false
             operator: field_type_target_id_op
             operator_limit_selection: false
@@ -226,8 +235,11 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
             reduce: false
-          is_grouped: true
+          is_grouped: false
           group_info:
             label: 'Type (field_type)'
             description: ''
