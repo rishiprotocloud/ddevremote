@@ -1,0 +1,37 @@
+<div class="properties-filter-wrapper">
+<div class="properties-filter-wrapper">
+  <h3>DEBUG: form.field_type[#options]</h3>
+  <pre>{{ dump(form.field_type['#options']) }}</pre>
+
+  <h3>DEBUG: form.field_type</h3>
+  <pre>{{ dump(form.field_type) }}</pre>
+</div>
+  <ul class="properties-filter">
+
+    {# Show All button #}
+    <li>
+      <label class="button-show-all{% if app.request.query.get('field_type') is empty or app.request.query.get('field_type') == 'All' %} is_active{% endif %}">
+        <input type="radio" name="field_type" value="" {% if app.request.query.get('field_type') is empty or app.request.query.get('field_type') == 'All' %}checked{% endif %}>
+        Show All
+      </label>
+    </li>
+
+    {# Dynamic categories - TID as key, term name as string value #}
+    {% for tid, term_name in form.field_type['#options'] %}
+      {% if tid != 'All' and tid|trim != '' %}
+        <li>
+          <label class="button-category{% if app.request.query.get('field_type') == tid %} is_active{% endif %}">
+            <input type="radio" name="field_type" value="{{ tid }}" {% if app.request.query.get('field_type') == tid %}checked{% endif %}>
+            {{ term_name }}
+          </label>
+        </li>
+      {% endif %}
+    {% endfor %}
+
+  </ul>
+
+  {# Hidden required fields #}
+  {{ form.form_build_id }}
+  {{ form.form_token }}
+  {{ form.form_id }}
+</div>

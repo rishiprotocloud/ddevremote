@@ -1,0 +1,41 @@
+{#
+/**
+ * Override BEF radios to look like Villa Agency template filter buttons
+ * Available variables:
+ * - wrapper_attributes
+ * - element
+ * - children
+ * - is_nested
+ * - depth
+ */
+#}
+<div class="properties-filter-wrapper">
+  <ul class="properties-filter">
+
+    {# Loop through all radio options #}
+    {% for child in children %}
+      {% set item = attribute(element, child) %}
+
+      {# Extract title and value #}
+      {% set label = item['#title']|default('') %}
+      {% set value = item['#value']|default('') %}
+      {% set is_checked = item['#value'] == app.request.query.get('field_type') or (value == '' and app.request.query.get('field_type') is empty) %}
+
+      {# Special class for Show All (value empty or 'All') #}
+      {% set button_class = value == '' or value == 'All' ? 'button-show-all' : 'button-category' %}
+
+      <li>
+        
+        <label class="{{ button_class }}{% if is_checked %} is_active{% endif %}">
+            <a href="#">
+            {{ item }} {# This renders the actual <input type="radio"> #}
+          
+          <span class="radio-label">{{ label }}</span>
+          </a>
+        </label>
+   
+      </li>
+    {% endfor %}
+
+  </ul>
+</div>
